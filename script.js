@@ -29,6 +29,7 @@ const compTodo = document.querySelector(".comp-todo");
 const categoryButtons = document.querySelectorAll(
   ".left-container__cat-btn button"
 );
+const btnDanger = document.querySelector(".btn-danger");
 
 loadElements();
 
@@ -37,6 +38,10 @@ formAdd.addEventListener("submit", formHandle);
 for (let btn of categoryButtons) {
   btn.addEventListener("click", catBtnFunc);
 }
+
+alertItems();
+
+btnDanger.addEventListener("click", clearAll);
 
 function mySaveLocale() {
   const myList = todoLists.querySelectorAll(".ul-main__li-submain");
@@ -118,6 +123,7 @@ function addTask(input) {
   todoLists.appendChild(item);
   mySaveLocale();
   updateFilter();
+  alertItems();
 
   input.value = "";
 
@@ -151,6 +157,7 @@ function trashBtn(e) {
     : "Not Todos";
   completeTodoLength();
   mySaveLocale();
+  alertItems();
 }
 
 function changeInputComp(e) {
@@ -225,6 +232,29 @@ function updateFilter() {
   const updateBtn = document.querySelector(".btn-primary[item-filter]");
 
   catBtnFilters(updateBtn.getAttribute("item-filter"));
+}
+
+function clearAll() {
+    todoLists.innerHTML = "";
+    localStorage.clear();
+
+    alertItems();
+    completeTodoLength();
+
+    lengthTodo.textContent = todoLists.children.length
+    ? `${todoLists.children.length}`
+    : "Not Todos";
+}
+
+function alertItems() {
+    const li = todoLists.querySelectorAll("li").length == 0;
+
+    const alert = document.querySelector(".no-todo-items-alert");
+    const categoryDiv = document.querySelector(".left-container__cat-btn");
+
+    alert.classList.toggle("d-none", !li);
+    categoryDiv.classList.toggle("d-none", li);
+    btnDanger.classList.toggle("d-none", li);
 }
 
 function confettiFunction() {

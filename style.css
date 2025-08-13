@@ -127,3 +127,137 @@
 
     transform: translateY(-5px);
 }
+
+/* Main Content */
+.main-content {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.main-content__section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    gap: 50px;
+}
+
+/* Left Side */
+.left-container {
+    flex-basis: 25%;
+
+    border-right: 1px solid gray;
+    height: 100%;
+    padding-left: 16rem;
+}
+
+.left-container .left-container__cat-btn button {
+    display: block;
+    margin: 30px 0 0 0;
+}
+
+.left-container .left-container__cat-h1 {
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.left-container__cat-btn .btn {
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.left-container__cat-btn .btn-primary {
+    background-color: purple;
+    color: white;
+}
+
+.left-container__cat-btn .btn-secondary {
+    background-color: gray;
+    color: white;
+}
+
+/* Right Side */
+.right-container {
+    flex-basis: 70%;
+
+    height: 100%;
+}
+
+.right-container .righ-container__h1 {
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.right-container__input_form form {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.form-btn-add {
+    border: none;
+    outline: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.right-container__input_form form {
+    display: flex;
+    gap: 10px;
+}
+
+.input-add {
+    background-color: gray;
+    width: 500px;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.right-container__hr {
+    margin: 5px 0 30px 0;
+    border: none;
+    height: 1px;
+    background-color: red;
+    width: 50%;
+}
+
+.todo-lists__ul-main .ul-main__li-submain {
+    display: flex;
+    align-items: center;
+
+    width: 50%;
+    background-color: gray;
+    padding: 15px;
+    margin-bottom: 10px;
+
+    gap: 10px;
+}
+
+.ul-main__li-submain .li-submain__text {
+    flex: 1;
+}
+
+.ul-main__li-submain .delete-btn {
+    scale: 0;
+    transition: all .5s ease;
+}
+
+.ul-main__li-submain:hover .delete-btn {
+    scale: 1;
+}
+
+.right-container__todo-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 50%;
+    margin-top: 40px;
+}

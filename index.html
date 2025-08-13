@@ -42,11 +42,60 @@
         </nav>
     </header>
 
-    <main>
-        <section>
-            <div class="left-container"></div>
-            <div class="space-container"></div>
-            <div class="right-container"></div>
+    <main class="main-content">
+        <section class="main-content__section">
+            <div class="left-container">
+                <h1 class="left-container__cat-h1">Categories</h1>
+                <div class="left-container__cat-btn">
+                    <button class="btn btn-primary">All</button>
+                    <button class="btn btn-secondary">Uncompleted</button>
+                    <button class="btn btn-secondary">Completed</button>
+                </div>
+            </div>
+            <!-- <div class="space-container"></div> -->
+            <div class="right-container">
+                <h1 class="righ-container__h1">All Tasks</h1>
+                <div class="right-container__input_form">
+                    <form class="right-container__form">
+                        <input class="input-add" type="text" placeholder="Add a new task">
+                        <button class="form-btn-add">Add</button>
+                    </form>
+                </div>
+                <div class="right-container__todo-info">
+                    <div class="todo-info__length">
+                        <p>todo length: 3</p>
+                    </div>
+                    <div class="todo-info__complete">
+                        <p>Completed Todos: 1</p>
+                    </div>
+                </div>
+                <hr class="right-container__hr">
+                <div class="right-container__todo-lists">
+                    <ul class="todo-lists__ul-main">
+                        <li class="ul-main__li-submain">
+                            <input type="checkbox" class="li-submain__input">
+                            <div class="li-submain__text">
+                                içerik burada olacak
+                            </div>
+                                <i class="fa-solid fa-circle-minus delete-btn"></i>
+                        </li>
+                        <li class="ul-main__li-submain">
+                            <input type="checkbox" class="li-submain__input">
+                            <div class="li-submain__text">
+                                içerik burada olacak
+                            </div>
+                            <i class="fa-solid fa-circle-minus delete-btn"></i>
+                        </li>
+                        <li class="ul-main__li-submain">
+                            <input type="checkbox" class="li-submain__input">
+                            <div class="li-submain__text">
+                                içerik burada olacak
+                            </div>
+                            <i class="fa-solid fa-circle-minus delete-btn"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 

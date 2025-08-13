@@ -56,14 +56,14 @@
             <div class="right-container">
                 <h1 class="righ-container__h1">All Tasks</h1>
                 <div class="right-container__input_form">
-                    <form class="right-container__form">
-                        <input class="input-add" type="text" placeholder="Add a new task">
-                        <button class="form-btn-add">Add</button>
+                    <form id="form-add" class="right-container__form">
+                        <input id="input-add" class="input-add" type="text" placeholder="Add a new task">
+                        <button type="submit" class="form-btn-add">Add</button>
                     </form>
                 </div>
                 <div class="right-container__todo-info">
                     <div class="todo-info__length">
-                        <p>todo length: 3</p>
+                        <p class="length-todo">todo length: <span class="span-length"></span></p>
                     </div>
                     <div class="todo-info__complete">
                         <p>Completed Todos: 1</p>
@@ -71,28 +71,8 @@
                 </div>
                 <hr class="right-container__hr">
                 <div class="right-container__todo-lists">
-                    <ul class="todo-lists__ul-main">
-                        <li class="ul-main__li-submain">
-                            <input type="checkbox" class="li-submain__input">
-                            <div class="li-submain__text">
-                                içerik burada olacak
-                            </div>
-                                <i class="fa-solid fa-circle-minus delete-btn"></i>
-                        </li>
-                        <li class="ul-main__li-submain">
-                            <input type="checkbox" class="li-submain__input">
-                            <div class="li-submain__text">
-                                içerik burada olacak
-                            </div>
-                            <i class="fa-solid fa-circle-minus delete-btn"></i>
-                        </li>
-                        <li class="ul-main__li-submain">
-                            <input type="checkbox" class="li-submain__input">
-                            <div class="li-submain__text">
-                                içerik burada olacak
-                            </div>
-                            <i class="fa-solid fa-circle-minus delete-btn"></i>
-                        </li>
+                    <ul id="todo-lists" class="todo-lists__ul-main">
+
                     </ul>
                 </div>
             </div>

@@ -285,3 +285,33 @@
     padding: 15px;
     cursor: pointer;
 }
+
+.warning-alert {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.warning-alert .success {
+    background-color: #9CCC65;
+    padding: 15px;
+    width: 18rem;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+
+    margin-bottom: 5px;
+
+    display: none;
+}
+
+.warning-alert .fail {
+    background-color: #EF5350;
+    padding: 15px;
+    width: 18rem;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+
+    display: none;
+}

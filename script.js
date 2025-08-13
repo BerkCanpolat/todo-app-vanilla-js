@@ -30,6 +30,8 @@ const categoryButtons = document.querySelectorAll(
   ".left-container__cat-btn button"
 );
 const btnDanger = document.querySelector(".btn-danger");
+const successAlert = document.querySelector(".success");
+const failAlert = document.querySelector(".fail");
 
 loadElements();
 
@@ -106,11 +108,19 @@ function formHandle(e) {
   const input = document.getElementById("input-add");
 
   if (input.value.trim().length == 0) {
-    alert("Birşey girmelisin");
+    // alert("Birşey girmelisin");
+    failAlert.style.display = "block"; 
+    setTimeout(() => {
+       failAlert.style.display = "none"; 
+    }, 2000);
     return;
   }
 
   addTask(input);
+  successAlert.style.display = "block";
+  setTimeout(() => {
+    successAlert.style.display = "none";
+  }, 2000);
 }
 
 function addTask(input) {
@@ -207,6 +217,7 @@ function catBtnFunc(e) {
 
   console.log(btnTarget.getAttribute("item-filter"));
   catBtnFilters(btnTarget.getAttribute("item-filter"));
+
 }
 
 function catBtnFilters(filterType) {

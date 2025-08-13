@@ -261,3 +261,8 @@
     width: 50%;
     margin-top: 40px;
 }
+
+.todo-lists__ul-main .ul-main__li-submain[item-completed] .li-submain__text {
+    color: white;
+    text-decoration: line-through;
+}

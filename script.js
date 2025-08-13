@@ -26,6 +26,7 @@ function checkCloseMenu() {
 const todoLists = document.getElementById("todo-lists");
 const lengthTodo = document.querySelector(".span-length");
 const formAdd = document.getElementById("form-add");
+const compTodo = document.querySelector(".comp-todo");
 
 loadElements();
 
@@ -52,12 +53,14 @@ function loadElements() {
 function createElemen(item) {
     const li = document.createElement("li");
     li.classList.add("ul-main__li-submain");
+    li.toggleAttribute("item-completed", item.completed);
 
     const input = document.createElement("input");
     input.classList.add("li-submain__input");
     input.type = "checkbox";
     input.placeholder = "Add a new task";
     input.checked = item.completed;
+    input.addEventListener("change", changeInputComp);
 
     const div = document.createElement("div");
     div.classList.add("li-submain__text");
@@ -118,5 +121,34 @@ function trashBtn(e) {
     todoLists.removeChild(trash);
 
     lengthTodo.textContent = todoLists.children.length ? `${todoLists.children.length}` : "Not Todos";
+    completeTodoLength();
     
+}
+
+function changeInputComp(e) {
+    console.log(e.target.parentElement);
+    const li = e.target.parentElement;
+
+    li.toggleAttribute("item-completed", e.target.checked);
+
+
+    completeTodoLength();
+    
+    
+}
+
+function completeTodoLength() {
+    const list = todoLists.children;
+
+    let compTodoLength = 0;
+
+    for(let comp of list) {
+        const checkbox = comp.querySelector('input[type="checkbox"]');
+
+        if(checkbox && checkbox.checked) {
+            compTodoLength++;
+        }
+    };
+
+    compTodo.textContent =  `${compTodoLength}`;
 }

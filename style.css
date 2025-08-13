@@ -266,3 +266,11 @@
     color: white;
     text-decoration: line-through;
 }
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-none {
+    display: none !important;
+}

@@ -27,21 +27,46 @@ const todoLists = document.getElementById("todo-lists");
 const lengthTodo = document.querySelector(".span-length");
 const formAdd = document.getElementById("form-add");
 const compTodo = document.querySelector(".comp-todo");
+const categoryButtons = document.querySelectorAll(".left-container__cat-btn button");
 
 loadElements();
 
 formAdd.addEventListener("submit", formHandle);
 
+for(let btn of categoryButtons) {
+    btn.addEventListener("click", catBtnFunc);
+}
+
+function mySaveLocale() {
+    const myList = todoLists.querySelectorAll(".ul-main__li-submain");
+
+    const arrayList = [];
+
+    for(let i of myList) {
+        const id = i.getAttribute("item-id");
+        const text = i.querySelector(".li-submain__text").textContent;
+        const completed = i.hasAttribute("item-completed");
+
+        arrayList.push({id,text,completed});
+    }
+
+    localStorage.setItem("todos", JSON.stringify(arrayList));
+}
+
 function loadElements() {
-    const items = [
-        {id:1, text: "Ben yazdım", completed: false},
-        {id:2, text: "Beşiktaş ulan", completed: true},
-        {id:3, text: "Olcak mı", completed: false},
-        {id:4, text: "Length test", completed: false},
-    ];
+    // const items = [
+    //     {id:1, text: "Ben yazdım", completed: false},
+    //     {id:2, text: "Beşiktaş ulan", completed: true},
+    //     {id:3, text: "Olcak mı", completed: false},
+    //     {id:4, text: "Length test", completed: false},
+    // ];
+
+    const items = JSON.parse(localStorage.getItem("todos")) || [];
 
 
     lengthTodo.textContent = items.length ? `${items.length}` : "load items";
+
+    completeTodoLength()
     
 
     for(let todo of items) {
@@ -52,7 +77,8 @@ function loadElements() {
 
 function createElemen(item) {
     const li = document.createElement("li");
-    li.classList.add("ul-main__li-submain");
+    li.className = "ul-main__li-submain";
+    li.setAttribute("item-id", item.id);
     li.toggleAttribute("item-completed", item.completed);
 
     const input = document.createElement("input");
@@ -100,14 +126,12 @@ function addTask(input) {
 
     
     todoLists.appendChild(item);
+    mySaveLocale()
+    updateFilter();
     
     input.value = "";
 
     lengthTodo.textContent = todoLists.children.length ? `${todoLists.children.length}` : "Not Todos";
-
-    console.log(`noli burda span ${lengthTodo.textContent}`); // doğru elementi seçiyor musun?
-console.log(todoLists.children.length); // sayı doğru mu?
-
 }
 
 function generateId() {
@@ -122,6 +146,7 @@ function trashBtn(e) {
 
     lengthTodo.textContent = todoLists.children.length ? `${todoLists.children.length}` : "Not Todos";
     completeTodoLength();
+    mySaveLocale()
     
 }
 
@@ -131,10 +156,9 @@ function changeInputComp(e) {
 
     li.toggleAttribute("item-completed", e.target.checked);
 
-
+    updateFilter(); 
     completeTodoLength();
-    
-    
+    mySaveLocale()
 }
 
 function completeTodoLength() {
@@ -151,4 +175,44 @@ function completeTodoLength() {
     };
 
     compTodo.textContent =  `${compTodoLength}`;
+}
+
+function catBtnFunc(e) {    
+    const btnTarget = e.target;
+
+    for(let btn of categoryButtons) {
+        btn.classList.add("btn-secondary");
+        btn.classList.remove("btn-primary");
+    }
+
+    btnTarget.classList.add("btn-primary");
+    btnTarget.classList.remove("btn-secondary");
+
+    console.log(btnTarget.getAttribute("item-filter"));  
+    catBtnFilters(btnTarget.getAttribute("item-filter")); 
+}
+
+function catBtnFilters(filterType) {
+    const list = todoLists.querySelectorAll("li");
+
+    for(let btnFilter of list) {
+        btnFilter.classList.remove("d-flex");
+        btnFilter.classList.remove("d-none");
+
+        const completed = btnFilter.hasAttribute("item-completed");
+
+        if(filterType == "completed") {
+            btnFilter.classList.toggle(completed ? "d-flex" : "d-none");
+        } else if(filterType == "uncompleted") {
+            btnFilter.classList.toggle(completed ? "d-none" : "d-flex");
+        } else {
+            btnFilter.classList.toggle("d-flex");
+        }
+    }
+}
+
+function updateFilter() {
+    const updateBtn = document.querySelector(".btn-primary[item-filter]");
+
+    catBtnFilters(updateBtn.getAttribute("item-filter"));
 }

@@ -34,4 +34,10 @@ CSS3
 
 JavaScript (Vanilla JS)
 
+
+
+🔗 Canlı Demo / Live Demo
+
+https://first-todoapp-berk.netlify.app
+
 Not; Projeyi kendimi geliştirmek amacı ile yaptım. / I did the project to improve myself.

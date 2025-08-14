@@ -41,3 +41,17 @@ JavaScript (Vanilla JS)
 https://first-todoapp-berk.netlify.app
 
 Not; Projeyi kendimi geliştirmek amacı ile yaptım. / I did the project to improve myself.
+
+
+
+
+
+https://github.com/user-attachments/assets/0c0d49c0-0523-4784-8843-72662a9b5937
+
+
+
+
+
+
+
+

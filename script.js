@@ -34,18 +34,22 @@ const successAlert = document.querySelector(".success");
 const failAlert = document.querySelector(".fail");
 const changeTaskText = document.querySelector(".righ-container__h1");
 
-loadElements();
+//App Init
+document.addEventListener("DOMContentLoaded", function () {
+  loadElements();
 
-formAdd.addEventListener("submit", formHandle);
+  formAdd.addEventListener("submit", formHandle);
 
-for (let btn of categoryButtons) {
-  btn.addEventListener("click", catBtnFunc);
-}
+  for (let btn of categoryButtons) {
+    btn.addEventListener("click", catBtnFunc);
+  }
 
-alertItems();
+  alertItems();
+  btnDanger.addEventListener("click", clearAll);
+});
 
-btnDanger.addEventListener("click", clearAll);
 
+//Local Storage
 function mySaveLocale() {
   const myList = todoLists.querySelectorAll(".ul-main__li-submain");
 
@@ -62,10 +66,11 @@ function mySaveLocale() {
   localStorage.setItem("todos", JSON.stringify(arrayList));
 }
 
+//Load Element
 function loadElements() {
   const items = JSON.parse(localStorage.getItem("todos")) || [];
 
-  lengthTodo.textContent = items.length ? `${items.length}` : "load items";
+  lengthTodo.textContent = items.length ? `${items.length}` : "0";
 
   completeTodoLength();
 
@@ -75,6 +80,7 @@ function loadElements() {
   }
 }
 
+//Create Function
 function createElemen(item) {
   const li = document.createElement("li");
   li.className = "ul-main__li-submain";
@@ -105,6 +111,7 @@ function createElemen(item) {
   return li;
 }
 
+//Form submit
 function formHandle(e) {
   e.preventDefault();
   console.log(e.target);
@@ -112,10 +119,10 @@ function formHandle(e) {
   const input = document.getElementById("input-add");
 
   if (input.value.trim().length == 0) {
-     failAlert.style.display = "block"; 
-     setTimeout(() => {
-        failAlert.style.display = "none"; 
-     }, 2000);
+    failAlert.style.display = "block";
+    setTimeout(() => {
+      failAlert.style.display = "none";
+    }, 2000);
     return;
   }
 
@@ -126,6 +133,7 @@ function formHandle(e) {
   }, 2000);
 }
 
+//Add Task Function
 function addTask(input) {
   const item = createElemen({
     id: generateId(),
@@ -142,13 +150,15 @@ function addTask(input) {
 
   lengthTodo.textContent = todoLists.children.length
     ? `${todoLists.children.length}`
-    : "Not Todos";
+    : "0";
 }
 
+//Random id
 function generateId() {
   return Date.now().toString();
 }
 
+//Remove Function
 function trashBtn(e) {
   const confettiUL = todoLists.querySelectorAll("li").length;
 
@@ -167,12 +177,13 @@ function trashBtn(e) {
 
   lengthTodo.textContent = todoLists.children.length
     ? `${todoLists.children.length}`
-    : "Not Todos";
+    : "0";
   completeTodoLength();
   mySaveLocale();
   alertItems();
 }
 
+//Input Change Function
 function changeInputComp(e) {
   console.log(e.target.parentElement);
   const li = e.target.parentElement;
@@ -191,6 +202,7 @@ function changeInputComp(e) {
   }
 }
 
+//Completed Todo Length Function
 function completeTodoLength() {
   const list = todoLists.children;
 
@@ -207,6 +219,7 @@ function completeTodoLength() {
   compTodo.textContent = `${compTodoLength}`;
 }
 
+//Filter Categories
 function catBtnFunc(e) {
   const btnTarget = e.target;
 
@@ -220,9 +233,9 @@ function catBtnFunc(e) {
 
   console.log(btnTarget.getAttribute("item-filter"));
   catBtnFilters(btnTarget.getAttribute("item-filter"));
-
 }
 
+//Filter Categories Function
 function catBtnFilters(filterType) {
   const list = todoLists.querySelectorAll("li");
 
@@ -234,67 +247,73 @@ function catBtnFilters(filterType) {
 
     if (filterType == "completed") {
       btnFilter.classList.toggle(completed ? "d-flex" : "d-none");
-      changeTaskText.textContent = "Completed Tasks"
+      changeTaskText.textContent = "Completed Tasks";
     } else if (filterType == "uncompleted") {
       btnFilter.classList.toggle(completed ? "d-none" : "d-flex");
-      changeTaskText.textContent = "Uncompleted Tasks"
+      changeTaskText.textContent = "Uncompleted Tasks";
     } else {
       btnFilter.classList.toggle("d-flex");
-      changeTaskText.textContent = "All Tasks"
+      changeTaskText.textContent = "All Tasks";
     }
   }
 }
 
+//Update Filter Categories Function
 function updateFilter() {
   const updateBtn = document.querySelector(".btn-primary[item-filter]");
 
   catBtnFilters(updateBtn.getAttribute("item-filter"));
 }
 
+//Deletes all tasks
 function clearAll() {
-    todoLists.innerHTML = "";
-    localStorage.clear();
+  todoLists.innerHTML = "";
+  localStorage.clear();
 
-    alertItems();
-    completeTodoLength();
+  alertItems();
+  completeTodoLength();
 
-    lengthTodo.textContent = todoLists.children.length
+  lengthTodo.textContent = todoLists.children.length
     ? `${todoLists.children.length}`
-    : "Not Todos";
+    : "0";
 }
 
+//alerts you depending on whether it is a task or not
 function alertItems() {
-    const li = todoLists.querySelectorAll("li").length == 0;
+  const li = todoLists.querySelectorAll("li").length == 0;
 
-    const alert = document.querySelector(".no-todo-items-alert");
-    const categoryDiv = document.querySelector(".left-container__cat-btn");
+  const alert = document.querySelector(".no-todo-items-alert");
+  const categoryDiv = document.querySelector(".left-container__cat-btn");
 
-    alert.classList.toggle("d-none", !li);
-    categoryDiv.classList.toggle("d-none", li);
-    btnDanger.classList.toggle("d-none", li);
+  alert.classList.toggle("d-none", !li);
+  categoryDiv.classList.toggle("d-none", li);
+  btnDanger.classList.toggle("d-none", li);
 }
 
+//allows us to update the added tasks
 function editModeOpen(e) {
-    console.log(e.target.parentElement);
-    const li = e.target.parentElement;
-    if(li.hasAttribute("item-completed") == false) {
-        e.target.contentEditable = true;
-    }
+  const li = e.target.parentElement;
+  if (li.hasAttribute("item-completed") == false) {
+    e.target.contentEditable = true;
+  }
 }
 
+//allows us to exit the update
 function editModeClose(e) {
-    e.target.contentEditable = false;
+  e.target.contentEditable = false;
 
-    mySaveLocale();
+  mySaveLocale();
 }
 
+//Pressing the Enter key saves and closes the update.
 function editModeCancel(e) {
-    if(e.key == "Enter") {
-        e.preventDefault();
-        editModeClose(e);
-    }
+  if (e.key == "Enter") {
+    e.preventDefault();
+    editModeClose(e);
+  }
 }
 
+//set off confetti
 function confettiFunction() {
   var count = 200;
   var defaults = {
@@ -333,6 +352,7 @@ function confettiFunction() {
   });
 }
 
+//set off confetti
 function startConfetti() {
   var defaults = {
     spread: 360,

@@ -14,12 +14,12 @@
 }
 
 .main-header__nav .header-h1 {
-  color: #42A5F5;
+  color: #42a5f5;
   font-size: 25px;
 }
 
 .main-header__nav h1 span {
-  color: #7E57C2;
+  color: #7e57c2;
 }
 
 .main-header__nav {
@@ -39,7 +39,7 @@
   text-align: center;
   width: 90%;
   max-width: 20rem;
-  background-color: #E8EAF6;
+  background-color: #e8eaf6;
   border-radius: 10px;
 
   overflow: hidden;
@@ -49,7 +49,6 @@
 
 .secret-menu-js {
   max-height: 350px;
-  
 }
 
 .main-header__secret-menu .secret-menu__img img {
@@ -62,7 +61,7 @@
 }
 
 .main-header__top-header {
-    padding: 15px;
+  padding: 15px;
 }
 
 .secret-menu__sub-info small {
@@ -79,7 +78,7 @@
   height: 1px;
   border: none;
   background-color: #212121;
-  opacity: .3;
+  opacity: 0.3;
   border-radius: 6px;
   width: 55%;
 
@@ -87,276 +86,386 @@
 }
 
 .secret-menu__info {
-    margin: 30px 0 10px 0;
+  margin: 30px 0 10px 0;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 .secret-menu__info .fa-brands {
-    color: wheat;
-    background-color: black;
-    padding: 8px;
-    border-radius: 50%;
+  color: wheat;
+  background-color: black;
+  padding: 8px;
+  border-radius: 50%;
 
-    transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .secret-menu__info .fa-x-twitter:hover {
-    color: #42A5F5;
-    background-color: white;
+  color: #42a5f5;
+  background-color: white;
 
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .secret-menu__info .fa-linkedin-in:hover {
-    color: #0D47A1;
-    background-color: white;
+  color: #0d47a1;
+  background-color: white;
 
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .secret-menu__info .fa-github:hover {
-    color: #212121;
-    background-color: white;
+  color: #212121;
+  background-color: white;
 
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /* Main Content */
 .main-content {
-    width: 100%;
-    margin-top: 50px;
+  width: 100%;
+  margin-top: 50px;
 }
 
 .main-content__section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 65vh;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  gap: 50px;
 }
 
 /* Left Side */
 .left-container {
-    flex-basis: 25%;
+  flex-basis: 25%;
 
-    border-right: 1px solid gray;
-    height: 100%;
-    padding-left: 16rem;
+  border-right: 1px solid gray;
+  height: 100%;
+  padding-left: 16rem;
 }
 
 .left-container .left-container__cat-btn button {
-    display: block;
-    margin: 30px 0 0 0;
+  display: block;
+  margin: 30px 0 0 0;
 }
 
 .left-container .left-container__cat-h1 {
-    margin-top: 50px;
-    font-size: 25px;
+  margin-top: 50px;
+  font-size: 25px;
 }
 
 .left-container__cat-btn .btn {
-    border: none;
-    outline: none;
-    padding: 10px;
-    width: 120px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all .5s ease;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .left-container__cat-btn .btn:hover {
-    color: white;
-    background-color: #BA68C8;
-    transform: translateY(-5px);
+  color: white;
+  background-color: #ba68c8;
+  transform: translateY(-5px);
 }
 
 .left-container__cat-btn .btn-primary {
-    background-color: #BA68C8;
-    color: white;
+  background-color: #ba68c8;
+  color: white;
 }
 
 .left-container__cat-btn .btn-secondary {
-    background-color: #E1BEE7;
-    color: white;
+  background-color: #e1bee7;
+  color: white;
 }
 
 /* Right Side */
 .right-container {
-    flex-basis: 70%;
+  flex-basis: 70%;
 
-    height: 100%;
+  height: 100%;
 }
 
 .right-container .righ-container__h1 {
-    margin-top: 50px;
-    font-size: 25px;
+  margin-top: 50px;
+  font-size: 25px;
 }
 
 .right-container__input_form form {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 10px;
 }
 
 .form-btn-add {
-    border: none;
-    outline: none;
-    padding: 1.5rem 3rem 1.5rem 3rem;
-    cursor: pointer;
-    background-color: #AED581;
-    color: white;
-    border-radius: .5rem;
+  border: none;
+  outline: none;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  cursor: pointer;
+  background-color: #aed581;
+  color: white;
+  border-radius: 0.5rem;
 }
 
 .form-btn-add:hover {
-    background-color: #DCEDC8;
-    color: black;
-}
-
-.right-container__input_form form {
-    display: flex;
-    gap: 10px;
+  background-color: #dcedc8;
+  color: black;
 }
 
 .input-add {
-    background-color: #E8F5E9;
-    width: 50rem;
-    border: none;
-    outline: none;
-    padding: 1.5rem;
-    border-radius: .5rem;
+  background-color: #e8f5e9;
+  width: 50rem;
+  border: none;
+  outline: none;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .right-container__hr {
-    margin: 5px 0 30px 0;
-    border: none;
-    height: 1px;
-    background-color: gray;
-    width: 66%;
+  margin: 5px 0 30px 0;
+  border: none;
+  height: 1px;
+  background-color: gray;
+  width: 66%;
 }
 
 .todo-lists__ul-main .ul-main__li-submain {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    width: 66%;
-    padding: 1.8rem;
-    margin-bottom: 10px;
-    border-radius: 10px;
+  width: 66%;
+  padding: 1.8rem;
+  margin-bottom: 10px;
+  border-radius: 10px;
 
-    background-color: #EFEBE9;
+  background-color: #efebe9;
 
-    gap: 10px;
+  gap: 10px;
 }
 
 .todo-lists__ul-main .ul-main__li-submain:hover {
-    background-color: #ECEFF1;
+  background-color: #eceff1;
 }
 
 .ul-main__li-submain .li-submain__text {
-    flex: 1;
-    font-size: 16px;
+  flex: 1;
+  font-size: 16px;
 }
 
 .ul-main__li-submain .delete-btn {
-    scale: 0;
-    transition: all .5s ease;
-    color: red;
-    cursor: pointer;
+  scale: 0;
+  transition: all 0.5s ease;
+  color: red;
+  cursor: pointer;
 }
 
 .ul-main__li-submain:hover .delete-btn {
-    scale: 1;
-    font-size: 20px;
+  scale: 1;
+  font-size: 20px;
 }
 
 .ul-main__li-submain .li-submain__input {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-    border: 1px solid green;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid green;
+  cursor: pointer;
 }
 
 .ul-main__li-submain .li-submain__input:checked {
-    background-color: #AED581;
-    border: 1px solid white;
+  background-color: #aed581;
+  border: 1px solid white;
 }
 
 .right-container__todo-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    width: 66%;
-    margin-top: 40px;
+  width: 66%;
+  margin-top: 40px;
 }
 
 .todo-lists__ul-main .ul-main__li-submain[item-completed] .li-submain__text {
-    color: red;
-    text-decoration: line-through;
+  color: red;
+  text-decoration: line-through;
 }
 
 .d-flex {
-    display: flex !important;
+  display: flex !important;
 }
 
 .d-none {
-    display: none !important;
+  display: none !important;
 }
 
 .no-todo-items-alert {
-    background-color: #FFEBEE;
-    width: 66%;
-    padding: 25px;
-    border-radius: 10px;
+  background-color: #ffebee;
+  width: 66%;
+  padding: 25px;
+  border-radius: 10px;
 }
 
 .btn-danger {
-    background-color: #EF9A9A;
-    color: white;
-    padding: 15px;
-    cursor: pointer;
+  background-color: #ef9a9a;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
 }
 
 .warning-alert {
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
 }
 
 .warning-alert .success,
 .warning-alert .fail {
-    padding: 15px;
-    width: 18rem;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
+  padding: 15px;
+  width: 18rem;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
 
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 
-    display: none;
+  display: none;
 }
 
 .success {
-    background-color: #9CCC65;
+  background-color: #9ccc65;
 }
 
 .fail {
-    background-color: #EF5350;
+  background-color: #ef5350;
 }
 
 .todo-info__length .length-todo,
 .todo-info__complete p {
-    color: gray;
+  color: gray;
+}
+
+/* Mobile View */
+@media (max-width: 576px) {
+  .main-content {
+    margin-top: 0;
+  }
+  .cat-header-div {
+    width: 95vw;
+    text-align: start;
+}
+  .cat-header-div2 {
+    width: 95vw;
+    text-align: start;
+}
+  .main-content__section {
+    flex-direction: column;
+    height: auto;
+    gap: 1px;
+  }
+
+  .left-container {
+    border-right: 0;
+    border-bottom: 1px solid gray;
+    padding-left: 0;
+    flex-direction: column;
+    gap: 0;
+    flex-basis: 100%;
+  }
+
+  .left-container .left-container__cat-h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 25px;
+    align-self: flex-start;
+  }
+
+  .left-container__cat-btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .left-container .left-container__cat-btn button {
+    margin: 30px 0 20px 0;
+  }
+
+  .left-container__cat-btn .btn {
+    padding: 8px;
+    width: 100px;
+  }
+
+  .right-container {
+    flex-basis: 100%;
+    height: 100%;
+  }
+
+  .right-container .righ-container__h1 {
+    margin-top: 20px;
+    font-size: 25px;
+    text-align: start;
+  }
+
+  .right-container__input_form form {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+
+  .right-container__hr {
+    width: 100%;
+  }
+
+  .input-add {
+    width: 100%;
+    padding: 1.4rem;
+  }
+
+  .form-btn-add {
+    padding: 1rem 3rem 1rem 3rem;
+  }
+
+  .right-container__todo-info {
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+  }
+
+  .todo-lists__ul-main .ul-main__li-submain {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .ul-main__li-submain .li-submain__text {
+    font-size: 11px;
+  }
+
+  .ul-main__li-submain .delete-btn {
+    scale: 1;
+  }
+
+  .ul-main__li-submain .li-submain__input {
+    width: 15px;
+    height: 15px;
+  }
+
+  .btn-danger {
+    padding: 10px;
+  }
+
+  .no-todo-items-alert {
+    width: 100%;
+    padding: 25px;
+  }
 }

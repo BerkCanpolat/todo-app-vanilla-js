@@ -26,4 +26,12 @@ TodoApp is an interactive Todo List application built with HTML, CSS, and JavaSc
 
 🔢 Eklenen ve tamamlanan görev sayısını gösterme / Shows total and completed tasks count
 
+📂 Teknolojiler / Technologies
+
+HTML5
+
+CSS3
+
+JavaScript (Vanilla JS)
+
 Not; Projeyi kendimi geliştirmek amacı ile yaptım. / I did the project to improve myself.

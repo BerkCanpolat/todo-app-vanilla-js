@@ -32,6 +32,7 @@ const categoryButtons = document.querySelectorAll(
 const btnDanger = document.querySelector(".btn-danger");
 const successAlert = document.querySelector(".success");
 const failAlert = document.querySelector(".fail");
+const changeTaskText = document.querySelector(".righ-container__h1");
 
 loadElements();
 
@@ -90,6 +91,9 @@ function createElemen(item) {
   const div = document.createElement("div");
   div.classList.add("li-submain__text");
   div.textContent = item.text;
+  div.addEventListener("click", editModeOpen);
+  div.addEventListener("blue", editModeClose);
+  div.addEventListener("keydown", editModeCancel);
 
   const i = document.createElement("i");
   i.className = "fa-solid fa-circle-minus delete-btn";
@@ -108,11 +112,10 @@ function formHandle(e) {
   const input = document.getElementById("input-add");
 
   if (input.value.trim().length == 0) {
-    // alert("Birşey girmelisin");
-    failAlert.style.display = "block"; 
-    setTimeout(() => {
-       failAlert.style.display = "none"; 
-    }, 2000);
+     failAlert.style.display = "block"; 
+     setTimeout(() => {
+        failAlert.style.display = "none"; 
+     }, 2000);
     return;
   }
 
@@ -231,10 +234,13 @@ function catBtnFilters(filterType) {
 
     if (filterType == "completed") {
       btnFilter.classList.toggle(completed ? "d-flex" : "d-none");
+      changeTaskText.textContent = "Completed Tasks"
     } else if (filterType == "uncompleted") {
       btnFilter.classList.toggle(completed ? "d-none" : "d-flex");
+      changeTaskText.textContent = "Uncompleted Tasks"
     } else {
       btnFilter.classList.toggle("d-flex");
+      changeTaskText.textContent = "All Tasks"
     }
   }
 }
@@ -266,6 +272,27 @@ function alertItems() {
     alert.classList.toggle("d-none", !li);
     categoryDiv.classList.toggle("d-none", li);
     btnDanger.classList.toggle("d-none", li);
+}
+
+function editModeOpen(e) {
+    console.log(e.target.parentElement);
+    const li = e.target.parentElement;
+    if(li.hasAttribute("item-completed") == false) {
+        e.target.contentEditable = true;
+    }
+}
+
+function editModeClose(e) {
+    e.target.contentEditable = false;
+
+    mySaveLocale();
+}
+
+function editModeCancel(e) {
+    if(e.key == "Enter") {
+        e.preventDefault();
+        editModeClose(e);
+    }
 }
 
 function confettiFunction() {

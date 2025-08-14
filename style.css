@@ -165,15 +165,22 @@
     width: 120px;
     border-radius: 10px;
     cursor: pointer;
+    transition: all .5s ease;
+}
+
+.left-container__cat-btn .btn:hover {
+    color: white;
+    background-color: #BA68C8;
+    transform: translateY(-5px);
 }
 
 .left-container__cat-btn .btn-primary {
-    background-color: purple;
+    background-color: #BA68C8;
     color: white;
 }
 
 .left-container__cat-btn .btn-secondary {
-    background-color: gray;
+    background-color: #E1BEE7;
     color: white;
 }
 
@@ -199,8 +206,16 @@
 .form-btn-add {
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 1.5rem 3rem 1.5rem 3rem;
     cursor: pointer;
+    background-color: #AED581;
+    color: white;
+    border-radius: .5rem;
+}
+
+.form-btn-add:hover {
+    background-color: #DCEDC8;
+    color: black;
 }
 
 .right-container__input_form form {
@@ -209,45 +224,73 @@
 }
 
 .input-add {
-    background-color: gray;
-    width: 500px;
+    background-color: #E8F5E9;
+    width: 50rem;
     border: none;
     outline: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 1.5rem;
+    border-radius: .5rem;
 }
 
 .right-container__hr {
     margin: 5px 0 30px 0;
     border: none;
     height: 1px;
-    background-color: red;
-    width: 50%;
+    background-color: gray;
+    width: 66%;
 }
 
 .todo-lists__ul-main .ul-main__li-submain {
     display: flex;
     align-items: center;
 
-    width: 50%;
-    background-color: gray;
-    padding: 15px;
+    width: 66%;
+    padding: 1.8rem;
     margin-bottom: 10px;
+    border-radius: 10px;
+
+    background-color: #EFEBE9;
 
     gap: 10px;
 }
 
+.todo-lists__ul-main .ul-main__li-submain:hover {
+    background-color: #ECEFF1;
+}
+
 .ul-main__li-submain .li-submain__text {
     flex: 1;
+    font-size: 16px;
 }
 
 .ul-main__li-submain .delete-btn {
     scale: 0;
     transition: all .5s ease;
+    color: red;
+    cursor: pointer;
 }
 
 .ul-main__li-submain:hover .delete-btn {
     scale: 1;
+    font-size: 20px;
+}
+
+.ul-main__li-submain .li-submain__input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid green;
+    cursor: pointer;
+}
+
+.ul-main__li-submain .li-submain__input:checked {
+    background-color: #AED581;
+    border: 1px solid white;
 }
 
 .right-container__todo-info {
@@ -255,12 +298,12 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 50%;
+    width: 66%;
     margin-top: 40px;
 }
 
 .todo-lists__ul-main .ul-main__li-submain[item-completed] .li-submain__text {
-    color: white;
+    color: red;
     text-decoration: line-through;
 }
 
@@ -274,14 +317,14 @@
 
 .no-todo-items-alert {
     background-color: #FFEBEE;
-    width: 50%;
-    padding: 20px;
+    width: 66%;
+    padding: 25px;
+    border-radius: 10px;
 }
 
 .btn-danger {
-    /* background-color: #FCE4EC; */
     background-color: #EF9A9A;
-    color: black;
+    color: white;
     padding: 15px;
     cursor: pointer;
 }
@@ -292,8 +335,8 @@
     right: 5%;
 }
 
-.warning-alert .success {
-    background-color: #9CCC65;
+.warning-alert .success,
+.warning-alert .fail {
     padding: 15px;
     width: 18rem;
     text-align: center;
@@ -305,13 +348,15 @@
     display: none;
 }
 
-.warning-alert .fail {
-    background-color: #EF5350;
-    padding: 15px;
-    width: 18rem;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
+.success {
+    background-color: #9CCC65;
+}
 
-    display: none;
+.fail {
+    background-color: #EF5350;
+}
+
+.todo-info__length .length-todo,
+.todo-info__complete p {
+    color: gray;
 }
